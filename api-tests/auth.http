@@ -1,0 +1,23 @@
+### Try to sign up as admin (the guard must turn this into "customer")
+POST http://localhost:3000/api/auth/sign-up/email
+Content-Type: application/json
+Origin: http://localhost:3000
+
+{
+  "name": "Fake Admin",
+  "email": "fakeadmin@test.com",
+  "password": "Test1234",
+  "role": "admin"
+}
+
+### Sign up as a vendor (should stay "vendor")
+POST http://localhost:3000/api/auth/sign-up/email
+Content-Type: application/json
+Origin: http://localhost:3000
+
+{
+  "name": "Test Vendor",
+  "email": "vendor@test.com",
+  "password": "Test1234",
+  "role": "vendor"
+}
