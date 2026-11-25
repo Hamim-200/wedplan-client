@@ -1,12 +1,17 @@
-import { Container } from "@/components/shared/Container";
+import { Banner } from "@/components/home/Banner";
+import { Categories } from "@/components/home/Categories";
+import { FeaturedServices } from "@/components/home/FeaturedServices";
+import { HowItWorks } from "@/components/home/HowItWorks";
+import { WhyChoose } from "@/components/home/WhyChoose";
 
 export default function HomePage() {
   return (
-    <Container className="py-24 text-center">
-      <h1 className="font-heading text-4xl font-semibold text-primary">
-        WedPlan is getting ready
-      </h1>
-      <p className="mt-4 text-muted-foreground">The full home page arrives in Phase 10.</p>
-    </Container>
+    <>
+      <Banner />
+      <FeaturedServices />
+      <Categories />
+      <WhyChoose />
+      <HowItWorks />
+    </>
   );
 }
