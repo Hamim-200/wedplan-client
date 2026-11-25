@@ -33,3 +33,8 @@ export interface Pagination {
   total: number;
   totalPages: number;
 }
+
+export interface ServiceDetailsResponse {
+  service: Service;
+  bookable: boolean;
+}
