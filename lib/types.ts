@@ -155,3 +155,22 @@ export interface TransactionsResponse {
   transactions: Transaction[];
   pagination: Pagination;
 }
+
+
+export interface SubscriptionInfo {
+  plan: "free" | "premium";
+  expiresAt: string | null;
+  cancelAtPeriodEnd: boolean;
+  priceCents: number;
+  currency: string;
+}
+
+export interface CheckoutResultResponse {
+  transaction: {
+    status: "pending" | "paid" | "failed" | "cancelled";
+    amount: number;
+    currency: string;
+    plan: string;
+  };
+  premiumActive: boolean;
+}
