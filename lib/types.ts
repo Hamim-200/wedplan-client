@@ -97,3 +97,61 @@ export interface CustomerStats {
   rejected: number;
   cancelled: number;
 }
+
+export interface AdminStats {
+  totalUsers: number;
+  totalVendors: number;
+  totalCustomers: number;
+  totalServices: number;
+  pendingServices: number;
+  approvedServices: number;
+  rejectedServices: number;
+  totalTransactions: number;
+  revenueCents: number;
+}
+
+export interface AdminUser {
+  id: string;
+  name: string;
+  email: string;
+  image: string | null;
+  role: "admin" | "vendor" | "customer";
+  isBlocked: boolean;
+  businessName: string | null;
+  subscriptionPlan: string;
+  subscriptionExpiresAt: string | null;
+  createdAt: string | null;
+}
+
+export interface UsersResponse {
+  users: AdminUser[];
+  pagination: Pagination;
+}
+
+export interface AdminUserDetailsResponse {
+  user: AdminUser;
+  stats: { services: number; bookings: number };
+}
+
+export interface AdminServicesResponse {
+  services: Service[];
+  pagination: Pagination;
+}
+
+export interface Transaction {
+  _id: string;
+  vendorId: string;
+  plan: string;
+  amount: number;
+  currency: string;
+  stripeSessionId: string;
+  stripeSubscriptionId: string | null;
+  status: "pending" | "paid" | "failed" | "cancelled";
+  createdAt: string;
+  vendor: VendorSummary | null;
+}
+
+export interface TransactionsResponse {
+  transactions: Transaction[];
+  pagination: Pagination;
+}
