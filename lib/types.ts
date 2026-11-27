@@ -174,3 +174,14 @@ export interface CheckoutResultResponse {
   };
   premiumActive: boolean;
 }
+
+export interface Profile {
+  id: string;
+  name: string;
+  email: string;
+  image: string | null;
+  role: "admin" | "vendor" | "customer";
+  businessName: string | null;
+  phone: string | null;
+  bio: string | null;
+}
