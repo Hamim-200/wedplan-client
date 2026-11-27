@@ -39,6 +39,18 @@ export interface ServiceDetailsResponse {
   bookable: boolean;
 }
 
+// A service as returned to its own vendor (no vendor info attached).
+export type MyService = Omit<Service, "vendor">;
+
+export interface VendorStats {
+  totalServices: number;
+  activeServices: number;
+  pendingBookings: number;
+  acceptedBookings: number;
+  subscriptionPlan: "free" | "premium";
+  subscriptionExpiresAt: string | null;
+}
+
 export type BookingStatus = "pending" | "accepted" | "rejected" | "cancelled";
 
 export interface ServiceSummary {
